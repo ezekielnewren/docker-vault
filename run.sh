@@ -15,5 +15,6 @@ else
     echo "a volume already exists for $FQDN"
 fi
 
-docker run --name $CONTAINER_NAME -itd --cap-add=IPC_LOCK -p $PORT:$PORT -v $VOLUME_NAME:/vault hashicorp/vault vault server -config /vault/config/config.hcl
+docker run --name $CONTAINER_NAME -itd --cap-add=IPC_LOCK --restart=always -p $PORT:$PORT \
+-v $VOLUME_NAME:/vault hashicorp/vault vault server -config /vault/config/config.hcl
 
