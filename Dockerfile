@@ -1,4 +1,5 @@
-FROM hashicorp/vault
+ARG VAULT_VERSION=latest
+FROM hashicorp/vault:$VAULT_VERSION
 
 RUN apk add openssl
 
