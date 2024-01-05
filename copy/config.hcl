@@ -11,6 +11,6 @@ storage "raft" {
 listener "tcp" {
     address = "0.0.0.0:PORT"
     tls_cert_file = "/vault/vault.pem"
-    tls_key_file = "/vault/vault.key"
+    tls_key_file = "/vault/vault.pem"
 }
 
